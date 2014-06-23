@@ -15,12 +15,9 @@ angular.module("imgsrcloader", [])
 		};
             }],
             link: function(scope, element, attrs) {
-		console.log("Fetching " + scope.uri);
 		scope.getimage(scope.uri).
                     then(function(localURI) {
 			element.attr("src", localURI);
-                    }, function(err) {
-			console.log("IMG fetch failed on " + scope.uri);
                     });
             }
 	};
